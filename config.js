@@ -1,9 +1,9 @@
 require('dotenv').config();
-const DBNAME = "blogdb";
+const DBNAME = "termsdb";
 module.exports= {
  PORT: process.env.PORT,
  DBNAME,
- APPNAME: 'blog',
+ APPNAME: 'glossary',
  DBURI: `mongodb+srv://${process.env.DBUSERNAME}:${process.env.DBPASSWORD}@blog-z710y.mongodb.net/${DBNAME}?retryWrites=true&w=majority`
  
  

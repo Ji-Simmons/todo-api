@@ -1,17 +1,23 @@
 const mongoose = require('mongoose');
 
-const historySchema = new mongoose.Schema({
-    author: {
+const termsSchema = new mongoose.Schema({
+    term: {
         type: String,
         unique: false,
         required: false,
-        ref: "author",
+        ref: "term",
     },
-    date: {
-        type: Date,
+    definition: {
+        type: String,
         unique: false,
         required: false,
-        ref: "date",
+        ref: "definition",
+    },
+    link:  {
+        type: String,
+        unique: false,
+        required: false,
+        ref: "link",
     },
     title: {
         type: String,
@@ -19,12 +25,7 @@ const historySchema = new mongoose.Schema({
         required: false,
         ref: "title",
     },
-    copy: {
-        type: String,
-        unique: false,
-        required: false,
-        ref: "copy",
-    }
+    
 },
 // If you want your model to store
 // timestamps when things are updated/created
@@ -34,4 +35,4 @@ const historySchema = new mongoose.Schema({
 }
 );
 
-module.exports = historySchema;
+module.exports = termsSchema;

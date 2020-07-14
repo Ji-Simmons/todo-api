@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const schema = require('./boats.model');
+const schema = require('./terms.model');
 
 schema.statics = {
     create: function(data, callback)
@@ -9,11 +9,13 @@ schema.statics = {
     },
     get: function(query, callback)
     {
-        this.find(query, callback);
+        this.find(query, null, {sort: 'string'}, callback);
+        
     },
     update: function(query, data, callback)
     {
         this.findOneAndUpdate(query, {$set: data}, {new: true}, callback);
+        
     },
     delete: function(query, callback)
     {
@@ -21,5 +23,5 @@ schema.statics = {
     }
 }
 // the first argument is the proper name of your collection
-const model = mongoose.model('boats', schema);
+const model = mongoose.model('terms', schema);
 module.exports = model;
