@@ -26,7 +26,7 @@ mongoose.connection.on('disconnected', () => {
  
 process.on('SIGINT', () => {
  mongoose.connection.close(() => {
- console.log('Closing MongoDB connection due to application termination.');
+ console.log('Closing MongoDB connection due to application taskination.');
  process.exit();
  });
 });

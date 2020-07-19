@@ -41,7 +41,7 @@ server.use(express.json());
 }*/
 
 // import your DAO things
-const terms = require('./api/terms/terms.dao');
+const tasks = require('./api/tasks/tasks.dao');
 
 
 
@@ -52,9 +52,9 @@ const routerFactory = require('./api/router');
  /*
  Routes
  */
-server.use('/', routerFactory(terms));
+server.use('/', routerFactory(tasks));
 
-/*server.use('/', routerGen(terms));
+/*server.use('/', routerGen(tasks));
 server.use('/', routerGen(boats));*/
 
  /*

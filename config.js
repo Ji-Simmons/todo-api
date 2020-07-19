@@ -1,5 +1,5 @@
 require('dotenv').config();
-const DBNAME = "termsdb";
+const DBNAME = "tasksdb";
 module.exports= {
  PORT: process.env.PORT,
  DBNAME,

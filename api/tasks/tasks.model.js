@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const termsSchema = new mongoose.Schema({
-    term: {
+const tasksSchema = new mongoose.Schema({
+    task: {
         type: String,
         unique: false,
         required: false,
-        ref: "term",
+        ref: "task",
     },
     definition: {
         type: String,
@@ -35,4 +35,4 @@ const termsSchema = new mongoose.Schema({
 }
 );
 
-module.exports = termsSchema;
+module.exports = tasksSchema;
