@@ -16,9 +16,9 @@ export default class Catalog extends RC {
     gettasks() {
         axios
        // This is where the data is hosted When local
-            //.get('http://localhost:5555/api/tasks')
+            .get('http://localhost:5555/api/tasks')
             // when it's live:
-            .get('https://task-catalog-api.herokuapp.com/') 
+            // .get('https://task-catalog-api.herokuapp.com/') 
         // Once we get a response and store data, let's change the loading state
         .then(response => {
             console.log(response);
@@ -43,15 +43,13 @@ export default class Catalog extends RC {
                     <div className="App">       
                         {!isLoading ? (
                             tasks.map(tasks => {
-                                const { _id, task, definition, link, title } = tasks;
+                                const { _id, task, date } = tasks;
                                 return (
                                     <div className="background" key={_id}>
                                         
                                         <div className="task"> {task}:</div>
-                                        <div className="definition"> {definition}</div><br />
-                                        <div className="resource" >
-                                        <a href={link} target="_blank">{title}</a>
-                                        </div>
+                                        <div className="date"> {date}</div><br />
+                                        
                                         <hr />
                                      
                                         
@@ -59,7 +57,7 @@ export default class Catalog extends RC {
                                 );
                             })
                         ) : (
-                            <p>Chill, bro . . .</p>
+                            <p>Chill, bro . . . I got this.</p>
                         )}
                         <Footer />
                     

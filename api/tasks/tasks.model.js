@@ -4,26 +4,14 @@ const tasksSchema = new mongoose.Schema({
     task: {
         type: String,
         unique: false,
-        required: false,
+        required: true,
         ref: "task",
     },
-    definition: {
+    date: {
         type: String,
         unique: false,
         required: false,
-        ref: "definition",
-    },
-    link:  {
-        type: String,
-        unique: false,
-        required: false,
-        ref: "link",
-    },
-    title: {
-        type: String,
-        unique: false,
-        required: false,
-        ref: "title",
+        ref: "date",
     },
     
 },
