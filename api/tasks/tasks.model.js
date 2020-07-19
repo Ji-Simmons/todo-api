@@ -4,7 +4,7 @@ const tasksSchema = new mongoose.Schema({
     task: {
         type: String,
         unique: false,
-        required: true,
+        required: false,
         ref: "task",
     },
     date: {
